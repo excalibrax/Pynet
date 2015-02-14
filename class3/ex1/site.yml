@@ -1,5 +1,5 @@
 ---
-- name:Generate configuration file
-    hosts:local
-    roles:
-        -switch_config
+- name: Generate configuration file
+  hosts: local
+  roles:
+  - switch_config   
