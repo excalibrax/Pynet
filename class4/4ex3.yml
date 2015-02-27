@@ -1,0 +1,17 @@
+---
+# Use Ansible to configure your 'primary Ethernet interface' as follows
+#interface description:     *** IN USE ***
+#switchport mode:          access
+#VLAN:                           <one of the VLANs created in exercise1>
+# primary interface == Ethernet4
+# secondary interface == Ethernet3
+
+- name: Class 4 Ansible Exercise1
+  hosts: arista
+  tasks:
+    - name: configure your 'primary Ethernet interface' 
+      eos_switchport: name=Ethernet4 mode=trunk trunk_native_vlan=1 trunk_allowed_vlans=420,430,440
+            eapi_username={{ eapi_username}}
+            eapi_password={{ eapi_password }}
+            eapi_hostname={{ eapi_hostname }}
+            eapi_port={{ eapi_port }}
